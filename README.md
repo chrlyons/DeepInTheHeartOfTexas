@@ -13,6 +13,7 @@ This Python script plays the song "Deep in the Heart of Texas" in the console. T
 2. Open a terminal or command prompt and navigate to the directory where the script is saved.
 
 3. Run the script using the following command:
+ `python3 main.py`
 
 4. The song will start playing in the console, with each verse printed line by line and a delay between verses.
 
