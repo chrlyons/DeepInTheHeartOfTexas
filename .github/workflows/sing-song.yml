@@ -21,7 +21,7 @@ jobs:
       uses: addnab/docker-run-action@v3
       with:
         image: deep-in-the-heart-of-texas
-        options: -it
+        tty: true
         shell: bash
         run: |
           python3 main.py
