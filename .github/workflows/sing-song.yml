@@ -18,6 +18,9 @@ jobs:
       run: docker build -t deep-in-the-heart-of-texas .
 
     - name: Run Docker container
-      run: |
-        docker run -d --name texas-song deep-in-the-heart-of-texas tail -f /dev/null
-        docker exec -it texas-song python3 main.py
+      uses: addnab/docker-run-action@v3
+      with:
+        image: deep-in-the-heart-of-texas
+        shell: bash
+        run: |
+          python3 main.py
