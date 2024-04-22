@@ -1,0 +1,21 @@
+name: Deep in the Heart of Texas
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: docker build -t deep-in-the-heart-of-texas .
+
+    - name: Run Docker container
+      run: docker run --rm -it deep-in-the-heart-of-texas
