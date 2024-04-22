@@ -18,6 +18,10 @@ jobs:
       run: docker build -t deep-in-the-heart-of-texas .
 
     - name: Run Docker container
-      run: |
-        docker run --rm --name my-song deep-in-the-heart-of-texas
-        docker logs my-song
+      uses: addnab/docker-run-action@v3
+      with:
+        image: deep-in-the-heart-of-texas
+        options: -it
+        shell: bash
+        run: |
+          python3 main.py
