@@ -18,4 +18,6 @@ jobs:
       run: docker build -t deep-in-the-heart-of-texas .
 
     - name: Run Docker container
-      run: docker run --rm -it deep-in-the-heart-of-texas
+      run: |
+        docker run --rm --name my-song deep-in-the-heart-of-texas
+        docker logs my-song
